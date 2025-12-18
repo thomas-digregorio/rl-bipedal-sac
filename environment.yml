@@ -1,0 +1,19 @@
+name: bipedal-sac
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12                 # Latest Stable
+  - pip
+  - swig                        # Required to build box2d-py
+  - gxx_linux-64                # C++ compiler for box2d-py
+  - ffmpeg                      # Required for video encoding
+  - pip:
+    - torch --index-url https://download.pytorch.org/whl/cu128
+    - gymnasium[box2d]          # The environment
+    - stable-baselines3         # Baseline agent
+    - wandb                     # Logging
+    - moviepy                   # Video processing
+    - rich                      # Terminal UI
+    - tqdm                      # Progress bars
+    - tensorboard               # For SB3 logging

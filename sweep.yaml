@@ -1,0 +1,40 @@
+program: experiments/train_custom.py
+method: grid
+metric:
+  goal: maximize
+  name: rollout/ep_rew_mean
+parameters:
+  env_id:
+    value: BipedalWalker-v3
+  seed:
+    values: [42]
+  total_timesteps:
+    value: 1000000
+  policy_lr:
+    value: 3e-4
+  q_lr:
+    value: 1e-3
+  hidden_dim:
+    value: 256
+  batch_size:
+    value: 256
+  buffer_size:
+    value: 1000000
+  gamma:
+    value: 0.99
+  tau:
+    value: 0.005
+  target_entropy:
+    value: "auto"
+  gradient_steps:
+    value: 1
+  train_freq:
+    value: 1
+  use_wandb:
+    value: true
+
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args}
