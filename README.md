@@ -91,4 +91,4 @@ The agent successfully learned to run efficiently without falling.
 ### Training Metrics
 The agent demonstrates stable convergence, solving the environment within 850k steps.
 
-![Training Curves](images/training_curves.png)
+![Training Curves](training_curves.png)
