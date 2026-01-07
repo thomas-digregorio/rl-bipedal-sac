@@ -34,11 +34,14 @@ The current stable configuration is designed for **Maximum Exploration** to prev
 
 ```bash
 ├── experiments/
-│   └── train_sb3.py    # Main training script (SB3)
-├── Dockerfile          # GPU-accelerated environment definition
+│   ├── train_sb3.py    # Main training script (SB3)
+│   └── record_video.py # Script to replay/record the trained agent
+├── src/                # Custom SAC implementation (Reference)
+├── final_sb3_model.zip # Solved Model (Reward > 300)
+├── vec_normalize.pkl   # Normalization statistics
+├── Dockerfile          # GPU-accelerated environment
 ├── environment.yml     # Conda dependencies
-├── sweep.yaml          # Hyperparameter search config
-└── README.md           # This file
+└── README.md           # Project documentation
 ```
 
 ## Getting Started
