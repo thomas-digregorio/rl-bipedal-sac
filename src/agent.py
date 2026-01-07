@@ -61,6 +61,14 @@ class SAC:
         else:
             self.alpha = alpha
 
+        # --- Optimization: Torch Compile (PyTorch 2.0+) ---
+        # Fuses kernels for faster execution
+        if hasattr(torch, "compile"):
+            print("Compiling agent networks...")
+            self.actor = torch.compile(self.actor)
+            self.qf1 = torch.compile(self.qf1)
+            self.qf2 = torch.compile(self.qf2)
+
     def select_action(self, state: np.ndarray, evaluate: bool = False):
         """
         Select action for a given state.

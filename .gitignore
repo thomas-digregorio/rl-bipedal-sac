@@ -1,24 +1,27 @@
-# Python & Artifacts
-__pycache__/
-*.py[cod]
-*.so
-.DS_Store
-
-# Environments
+# 1. Security (CRITICAL)
 .env
-.venv
-env/
-venv/
+keys.json
 wandb/
+*.wandb
+secrets/
 
-# IDEs
+# 2. Python & Environment
+__pycache__/
+*.pyc
+.ipynb_checkpoints
 .vscode/
 .idea/
+venv/
+env/
+.DS_Store
 
-# Model Checkpoints & Data
+# 3. Large Training Data (Block all by default)
+runs/
 models/
 checkpoints/
-*.pth
-*.zip
 videos/
-results/
+images/
+
+# 4. Model Files (Block generic zips/pkls)
+*.zip
+*.pkl
